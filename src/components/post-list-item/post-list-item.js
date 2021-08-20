@@ -1,5 +1,10 @@
 import React from "react"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar, faTrash, faHeart } from '@fortawesome/free-solid-svg-icons'
+
+import './post-list-item.css'
+
 const PostListItem = () => {
     return (
         <li className="app-list-item d-flex justify-content-between">
@@ -7,13 +12,13 @@ const PostListItem = () => {
             Hello World
         </span>
         <div className="d-flex justify-content-center align-items-center">
-            <button className="btn-star btn-sm">
-                <i className="fas fa-star"></i>
+            <button className="btn-star btn-sm" type="submit">
+                <FontAwesomeIcon icon={faStar} />
             </button>
-            <button className="btn-trash btn-sm">
-                <i className="fas fa-trash-o"></i>
+            <button className="btn-trash btn-sm" type="submit">
+                <FontAwesomeIcon icon={faTrash} />
             </button>
-            <i className="fas fa-camera"></i>
+                <FontAwesomeIcon icon={faHeart} />
         </div>
     </li>
     )
