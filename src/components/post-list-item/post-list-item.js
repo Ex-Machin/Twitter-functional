@@ -3,7 +3,7 @@ import React, {Component} from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faTrash, faHeart } from '@fortawesome/free-solid-svg-icons'
 
-import './post-list-item.css'
+import './post-list-item.scss'
 
 export default class PostListItem extends Component {
     constructor(props) {
@@ -29,7 +29,7 @@ export default class PostListItem extends Component {
     }
 
     render() {
-        const {label} = this.props
+        const {label, onDelete} = this.props
         const {important, like} = this.state
         let classNames = 'app-list-item d-flex justify-content-between'
         
@@ -52,7 +52,10 @@ export default class PostListItem extends Component {
             <button className="btn-star btn-sm" type="submit" onClick={this.onImportant}>
                 <FontAwesomeIcon icon={faStar} />
             </button>
-            <button className="btn-trash btn-sm" type="submit">
+            <button 
+            className="btn-trash btn-sm" 
+            type="submit"
+            onClick={onDelete}>
                 <FontAwesomeIcon icon={faTrash} />
             </button>
                 <FontAwesomeIcon icon={faHeart} />
